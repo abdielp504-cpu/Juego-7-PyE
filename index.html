@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Juego 7: El Mito de los Patrones</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="game-container">
+        <h1>¿QUÉ NÚMERO SALDRÁ?</h1>
+        <p class="mito">Mito: "Los números tienen patrones"</p>
+
+        <div class="stats-grid">
+            <div class="stat-card">FICHAS: <span id="fichas">1000</span></div>
+            <div class="stat-card success">ACIERTOS: <span id="aciertos">0</span></div>
+            <div class="stat-card danger">ERRORES: <span id="errores">0</span></div>
+            
+        </div>
+
+        <div class="main-layout">
+            <div class="wheel-box">
+                <div class="pointer"></div>
+                <div class="wheel" id="wheel"></div>
+                <div id="resultado-texto" class="mensaje">Elige un número para tirar</div>
+            </div>
+
+            <div class="chart-box">
+                <canvas id="graficoResultados"></canvas>
+            </div>
+        </div>
+
+        <div class="betting-grid" id="botones"></div>
+
+        <div class="history-section">
+            <h3>Historial de números caídos:</h3>
+            <div id="historial-lista" class="historial-scroll"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

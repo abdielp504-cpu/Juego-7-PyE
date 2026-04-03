@@ -1,0 +1,192 @@
+/* Reset general para que no haya márgenes extraños */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0d0d0f;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.game-container {
+    background: #1a1a1e;
+    max-width: 800px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 24px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+}
+
+h1 { color: #f1c40f; letter-spacing: 2px; margin-bottom: 5px; }
+.mito { color: #666; font-style: italic; margin-bottom: 25px; font-size: 0.9rem; }
+
+/* Contenedores de estadísticas (Fichas, Aciertos, Errores) */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: #25252b;
+    padding: 15px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.success { color: #2ecc71; border-bottom: 3px solid #2ecc71; }
+.danger { color: #e74c3c; border-bottom: 3px solid #e74c3c; }
+
+/* Disposición Principal: Ruleta a la izquierda, Gráfico a la derecha */
+.main-layout {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.wheel-box {
+    position: relative;
+    width: 280px;
+}
+
+.pointer {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 30px solid #e74c3c;
+    z-index: 10;
+}
+
+/* Dibujamos la ruleta con los 10 sectores */
+.wheel {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 8px solid #333;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: conic-gradient(
+        #2c3e50 0deg 36deg, #34495e 36deg 72deg, 
+        #2c3e50 72deg 108deg, #34495e 108deg 144deg,
+        #2c3e50 144deg 180deg, #34495e 180deg 216deg,
+        #2c3e50 216deg 252deg, #34495e 252deg 288deg,
+        #2c3e50 288deg 324deg, #34495e 324deg 360deg
+    );
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Números de la ruleta */
+.wheel-number {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: white;
+    transform-origin: center;
+}
+
+.wheel-number span {
+    display: inline-block;
+}
+
+.chart-box {
+    flex: 1;
+    min-width: 300px;
+    background: #25252b;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.mensaje {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #f1c40f;
+    min-height: 24px;
+    font-size: 1.1rem;
+}
+
+/* Botonera */
+.betting-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-apuesta {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-apuesta:hover { background: #f1c40f; color: black; transform: translateY(-2px); }
+.btn-apuesta:active { transform: scale(0.95); background: #e3b000; }
+
+/* Historial */
+.history-section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+}
+
+.history-section h3 {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: #888;
+}
+
+.historial-scroll {
+    background: #111;
+    padding: 15px;
+    border-radius: 10px;
+    min-height: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+.historial-item {
+    background: #25252b;
+    color: #f1c40f;
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    border: 1px solid #333;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
