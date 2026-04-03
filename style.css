@@ -190,3 +190,29 @@ h1 { color: #f1c40f; letter-spacing: 2px; margin-bottom: 5px; }
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+/* Sección de explicación del mito */
+.explicacion-mito {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(46, 204, 113, 0.1);
+    border: 1px dashed #2ecc71;
+    border-radius: 12px;
+    text-align: left;
+}
+
+.explicacion-mito h3 {
+    color: #2ecc71;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.explicacion-mito p {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.explicacion-mito strong {
+    color: #2ecc71;
+}
